@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MeliusSoft</title>
 </head>
 <body>
-
+<form action="http://127.0.0.1:8000/" method="post">
+    {% csrf_token %}
+    <input type="text" name="id" placeholder="введите id контракта">
+    <button>OK</button>
+</form>
+{% for item in manufacturers %}
+    <p>id.{{ item.pk }} {{ item.title }}</p>
+{% endfor %}
 </body>
 </html>
